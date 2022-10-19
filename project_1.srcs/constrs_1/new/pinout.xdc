@@ -25,10 +25,7 @@ set_property PACKAGE_PIN AA25 [get_ports PHY_RXD5]
 set_property PACKAGE_PIN AA24 [get_ports PHY_RXD6]
 set_property PACKAGE_PIN AB25 [get_ports PHY_RXD7]
 set_property PACKAGE_PIN AB24 [get_ports PHY_RXER]
-set_property PACKAGE_PIN Y31 [get_ports PHY_TXC_GTXCLK]
-set_property PACKAGE_PIN V32 [get_ports PHY_TXCTL_TXEN]
-set_property IOSTANDARD LVCMOS33 [get_ports PHY_TXCTL_TXEN]
-set_property IOSTANDARD LVCMOS33 [get_ports PHY_TXC_GTXCLK]
+
 set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXER]
 set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXD7]
 set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXD6]
@@ -38,18 +35,22 @@ set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXD3]
 set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXD2]
 set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXD1]
 set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXD0]
-set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXCTL_RXDV]
-set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXCLK]
-set_property IOSTANDARD LVCMOS33 [get_ports PHY_RESET]
+
 set_property PACKAGE_PIN Y33 [get_ports PHY_RESET]
 set_property PACKAGE_PIN Y30 [get_ports PHY_RXCLK]
+set_property IOSTANDARD LVCMOS33 [get_ports PHY_RESET]
+set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXCLK]
+
 set_property PACKAGE_PIN V31 [get_ports PHY_RXCTL_RXDV]
-set_property PACKAGE_PIN AC33 [get_ports USER_CLK2]
-set_property PACKAGE_PIN AC34 [get_ports USER_CLK2_SDA]
-set_property PACKAGE_PIN AA33 [get_ports USER_CLK2_SCL]
-set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK2]
-set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK2_SCL]
-set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK2_SDA]
+set_property PACKAGE_PIN Y31 [get_ports PHY_TXC_GTXCLK]
+set_property PACKAGE_PIN V32 [get_ports PHY_TXCTL_TXEN]
+set_property IOSTANDARD LVCMOS33 [get_ports PHY_RXCTL_RXDV]
+set_property IOSTANDARD LVCMOS33 [get_ports PHY_TXC_GTXCLK]
+set_property IOSTANDARD LVCMOS33 [get_ports PHY_TXCTL_TXEN]
+
+
+
+
 
 
 

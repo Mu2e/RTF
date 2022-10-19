@@ -125,7 +125,10 @@ always @ (posedge clock) begin
 	if (reseti) begin
 		ClockDivider <= 0;
 	end else if (ClockDivider == 0) begin
-		ClockDivider <= (debugenable) ? 49 : 1249;
+	//ORIGINAL//////
+	//	ClockDivider <= (debugenable) ? 49 : 1249;
+	///////////////
+	ClockDivider <= (debugenable) ? 49 : 625;
 //		`ifdef debug	
 //		ClockDivider <= 49;
 //		`else
@@ -142,7 +145,10 @@ always @ (posedge clock)
 			SCLChange <= 1'b0;
 		end else if (debugenable && (ClockDivider == 49)) begin
 			SCLChange <= 1'b1;
-		end else if (ClockDivider == 624) begin
+		//ORIGINAL//////
+		//end else if (ClockDivider == 624) begin
+		///////////////
+		end else if (ClockDivider == 312) begin
 			SCLChange <= 1'b1;
 //		`ifdef debug
 //		else if (ClockDivider == 49)
@@ -160,7 +166,11 @@ always @ (posedge clock) begin
 		SDAChange <= 1'b0;
 	end else if (debugenable && (ClockDivider == 24)) begin
 		SDAChange <= 1'b1;
-	end else if (ClockDivider == 1249) begin
+		
+	//ORIGINAL//////
+	//end else if (ClockDivider == 1249) begin
+	///////////////		
+	end else if (ClockDivider == 625) begin
 //	`ifdef debug
 //	else if (ClockDivider == 24)
 //	`else

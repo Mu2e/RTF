@@ -17,28 +17,32 @@ set_property BITSTREAM.CONFIG.SPI_FALL_EDGE YES [current_design]
 #Ryan and Alan found this last constraint to cause problems! (April 2017)
 #list_property_value BITSTREAM.CONFIG.EXTMASTERCCLK_EN div-1 [current_design]
 
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets pll_clk_0_inst/inst/clk_out200M]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets clk_in200M]
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets USER_CLK2_IBUF]
-#create_clock -period 5.000 -name clk_in_sig [get_ports clk_in_sig]
+#-------------------------------------
+# CLOCK
+#-------------------------------------
 
-
-#My stuff
-#set_property BITSTREAM.Config.SPI_buswidth 4 [current_design]
-
-#set_property CFGBVS VCCO [current_design]
-#set_property CONFIG_VOLTAGE 3.3 [current_design]
-
-set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK1]
 set_property PACKAGE_PIN AA30 [get_ports USER_CLK1]
-create_clock -period 10.000 -name USER_CLK1 [get_ports USER_CLK1]
+set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK1]
+create_clock -period 5.000 -name USER_CLK1 [get_ports USER_CLK1]
 
-#set_property IOSTANDARD LVCMOS33 [get_ports GEL_RXCLK]
-#create_clock -period 8.000 -name GEL_RXCLK [get_ports GEL_RXCLK]
+set_property PACKAGE_PIN AC28 [get_ports USER_CLK1_SDA]
+set_property PACKAGE_PIN AC29 [get_ports USER_CLK1_SCL]
+set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK1_SCL]
+set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK1_SDA]
+
+set_property PACKAGE_PIN AC33 [get_ports USER_CLK2]
+set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK2]
+create_clock -period 10.000 -name USER_CLK2 [get_ports USER_CLK2]
+
+set_property PACKAGE_PIN AC34 [get_ports USER_CLK2_SDA]
+set_property PACKAGE_PIN AA33 [get_ports USER_CLK2_SCL]
+set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK2_SCL]
+set_property IOSTANDARD LVCMOS33 [get_ports USER_CLK2_SDA]
 
 create_clock -period 5.000 -name NW_LA_16_P -waveform {0.000 2.500} [get_ports NW_LA_16_P]
 create_clock -period 8.000 -name PHY_RXCLK -waveform {0.000 4.000} [get_ports PHY_RXCLK]
 
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets debug_pll_inst/inst/clk_in1_debug_pll]
 
 #-------------------------------------
 # LED Status Pinout   (bottom to top)
