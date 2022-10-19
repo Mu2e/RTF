@@ -394,7 +394,7 @@ port map(
 	reset           => rst,
 	DelayValue      => DelayValue,     	
 	DeviceAddress   => DeviceAddress,  	
-	ReadEnable      => ReadEnable,     	
+	ReadEnable      => user_tx_rden,     	
 	ReadDone        => ReadDone,       	
 	ReadRegAddress  => rx_addr(7 downto 0), 	
 	ReadRegData     => tx_data(7 downto 0),    	
@@ -497,7 +497,7 @@ eth_interface : entity work.Ethernet_Interface
 
 reset_btn <= '0';
 reset_n <= not reset;
-
+user_ready <= ReadDone or WriteDone;
 
 	
 ---- IBUF 
